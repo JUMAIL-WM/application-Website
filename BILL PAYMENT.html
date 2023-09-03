@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Document</title>
+	
+	<style>
+
+          ul{
+		   list-style-type:none;
+		   margin:0;
+		   padding:0;
+		   overflow:hidden;
+		   background-color:yellow;
+		   }
+		   
+		   li{
+		   float:left;
+		   }
+		   
+		   li a{
+		   color:blue;
+		   display:block;
+		   text-align:center;
+		   padding:16px;
+		   text-decoration:none;
+		   }
+		   
+		   li a:hover{
+		   background-color:red;
+		   }
+		
+        body
+		{ 
+		 background-color:#07E4C9;
+		   
+		 }
+		 
+      </style>
+</head>
+<body>
+
+    <h1 align="center"><marquee> JUMAIL COLLEGE OF EDUCATION </marquee> </h1>	
+    <hr>	
+
+	<ul align="center">
+	   <li> <a href="HOME.html">HOME</a></li>
+	   <li> <a href="APPLICATION.html">APPLICATION FORM</a></li>
+	   <li> <a href="TIME TABLE.html">TIME TABLE</a></li>
+	   <li> <a href="BILL PAYMENT.html"> BILL PAYMENT</a></li>
+    </ul>
+	 
+    
+	
+	
+    <h1>Bill Payment</h1>
+    <div class="form">
+        
+        <form action="#" name="myform" id="table">
+            <table bgcolor="pink">
+            
+                <tr>
+                    <td>    <label for="">Firs Name:</label></td>
+                    <td> <input type="text" name="fname" id="fname" required></td>
+                </tr>
+               
+                <tr>
+                    <td><label for="">Last Name:</label></td>
+                    <td><input type="text" name="lname" id="lname" required></td>
+                </tr>
+                
+                <tr>
+                    <td><label for="">Register No:</label></td>
+                    <td><input type="text" name="regno" id="regno" required></td>
+                </tr>
+                <tr>
+                    <td><label for="">Semester:</label></td>
+                    <td><input type="text" name="smstr" id="smstr" ></td>
+                </tr>
+
+                <tr>
+                    <td><label for="">Registration Fees:</label></td>
+                    <td><input type="text" name="rgsfees" id="rgsfees" ></td>
+                </tr>
+
+                <tr>
+                    <td><label for="">Study Fees:</label></td>
+                    <td><input type="text" name="stdyfees" id="stdyfees"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="">Total:</label></td>
+                    <td><input type="text" name="total" id="total" ></td>
+                </tr>
+            </table>
+            <br>
+            <input type="submit" value="Save" onclick="validate()" >&nbsp;&nbsp;
+            <input type="reset" value="Cancel">&nbsp;&nbsp;
+            <input type="reset" value="Clear">&nbsp;&nbsp;
+                
+
+        </form>
+       
+        </div>
+    </div>
+        
+        
+		
+        <h1>Amount Details</h1>
+
+        <table border="1" cellspacing="0" width="30%" height="50%" bgcolor="pink">
+            <tr>
+                <th>Semester</th>
+                <th>Registration</th>
+                <th>Study</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>1,000</td>
+                <td>15,000</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>2,000</td>
+                <td>30,000</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>2,000</td>
+                <td>40,000</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>2,000</td>
+                <td>40,000</td>
+            </tr>
+        </table>
+    
+    <br><br>
+
+    
+    <script>
+	
+        function validate(){
+            let letter = /^[A-za-z\s]+$/;
+            let reg_no = /^[#.0-9a-za-z\s,-]+$/;
+
+            let fname = document.getElementById('fname').value;
+            let lname = document.getElementById('lname').value;
+            let regno = document.getElementById('regno').value;
+            let smstr = document.getElementById('smstr').value;
+            let rgsfees = document.getElementById('rgsfees').value;
+            let stdyfees = document.getElementById('stdyfees').value;
+            
+
+            if (fname == ""){
+                alert("First Name is Empty");
+            }else if (letter.test(fname)=== false){
+                alert("First Name Must be Letter Only")
+            }else if (lname == ""){
+                alert("Last Name is Empty");
+            }else if (letter.test(lname)=== false){
+                alert("Last Name Must be Letter Only")
+            }else if (regno == ""){
+                alert("Enter Your Registration Number");
+            }else if (reg_no.test(regno)=== false){
+                alert("Correctly Type Your Registration Number")
+            }else if (smstr == ""){
+                alert("Fill the smstr Colum");
+            }else if (reg_no.test(smstr)=== false){
+                alert("Re-type the Semester");
+            }else if(rgsfees == ""){
+                alert("Fill The Colum");
+            }else if (stdyfees == ""){
+                alert("Fill The Colum")
+            }else {
+                alert("Data Saved")
+            }
+
+            
+            var x= parseInt(document.getElementById('rgsfees').value);
+            var y= parseInt(document.getElementById('stdyfees').value);
+            var Total= x+y;
+            document.getElementById('total').innerHTML=Total;
+            
+           
+        }
+
+        function add(){
+            var x= parseInt(document.getElementById('rgsfees').value);
+            var y= parseInt(document.getElementById('stdyfees').value);
+            var Total= x+y;
+            document.getElementById('total').innerHTML=Total;
+
+        }
+
+        
+        
+        </script>
+		
+</body>
+</html>
